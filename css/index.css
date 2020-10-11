@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+*::selection {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 body {
     margin-top: 62px;
 }
@@ -65,14 +69,66 @@ body {
 .header {
     margin-top: 100px;
     height: 250px;
-    background-color: #283593;
-    display: flex;
+    background-color: #3f51b5;
+    display: grid;
+    text-align: center;
+    align-items: center;
     color: #fff;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
 }
 
 .header h1 {
     font-size: 80px;
+}
+
+.header .regions {
+    text-transform: uppercase;
+    display: flex;
+    width: 800px;
+    letter-spacing: 1px;
+    margin-bottom: -21px;
+}
+
+.header .region {
+    width: 33%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 3px solid rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+.header .region.selected {
+    border-bottom: 3px solid white;
+}
+
+.header .region:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: background 0.2s;
+}
+
+.header .region:active {
+    background: rgba(255, 255, 255, 0.25);
+    transition: background 0.2s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.gamemodes {
+    max-width: 800px;
+    background: #fff;
+    margin: 10px;
+    text-align: left;
+    position: relative;
 }
