@@ -11,6 +11,7 @@
 
 body {
     margin-top: 62px;
+    background-color: #eceff1;
 }
 
 .topBar {
@@ -67,7 +68,7 @@ body {
 }
 
 .header {
-    margin-top: 100px;
+    margin-top: 130px;
     height: 250px;
     background-color: #3f51b5;
     display: grid;
@@ -131,4 +132,81 @@ body {
     margin: 10px;
     text-align: left;
     position: relative;
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 1rem);
+    max-width: 46rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.gamemodes .gamemode {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.gamemodes .gamemode .playBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 20px;
+    box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+.gamemodes .gamemode .playBtn:hover {
+    transition: box-shadow 0.2s;
+    box-shadow: 0 3.5px 3.5px -2px rgba(0,0,0,.3), 0 3.5px 4px 0 rgba(0,0,0,.24), 0 1px 8px 0 rgba(0,0,0,.22);
+}
+
+.gamemodes .gamemode .info p {
+    position: absolute;
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-10px);
+}
+
+.gamemodes .gamemode:hover {
+    background-color: rgba(0,0,0,.05);
+}
+
+.gamemodes .gamemode:active {
+    background-color: rgba(0,0,0,.1);;
+}
+
+.gamemodes .gamemode .description .players {
+    color: rgba(0,0,0,.4);
+}
+
+.gamemodes .gamemode .info::before {
+    transition: background-color 1s;
+}
+
+.gamemodes .gamemode .info:hover::before {
+    content: '';
+    transition: background 0.2s;
+    position: absolute;
+    right: 27px;
+    border-radius: 50%;
+    transform: translateY(-24px);
+    width: 50px;
+    height: 50px;
+    background: rgba(27, 3, 243, 0.1);
+}
+
+.gamemodes .gamemode .info:active::before {
+    background: rgba(27, 3, 243, 0.2);
 }
