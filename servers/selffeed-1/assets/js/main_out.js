@@ -1,4 +1,4 @@
-//v0.13
+//v0.14
 //(function() {
     //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -469,7 +469,8 @@
                 if (mod) name = "[MOD] " + name;
                 var wait = Math.max(3000, 1000 + message.length * 150);
                 chat.waitUntil = syncUpdStamp - chat.waitUntil > 1000 ? syncUpdStamp + wait : chat.waitUntil + wait;
-                    if (!message.includes("Join our Discord")) {        			
+                    console.log(message)
+					if (!message.includes("Join our Discord")) {        			
                 chat.messages.push({
                     server: server,
                     admin: admin,
