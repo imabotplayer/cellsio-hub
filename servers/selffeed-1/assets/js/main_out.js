@@ -1708,6 +1708,9 @@
 		wsInit(url);
 		
     };
+	$("#connector").click(function() {
+		window.setserver($("#wsserver").val())
+	})	
     window.spectate = function(a) {
         wsSend(UINT8_CACHE[1]);
         stats.maxScore = 0;
