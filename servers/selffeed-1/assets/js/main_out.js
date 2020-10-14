@@ -1,4 +1,4 @@
-//v0.7
+//v0.8
 //(function() {
     //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -452,7 +452,7 @@
                     stats.pingLoopStamp = Date.now();
                 }, 2000);
                 break;
-            case 0x63: // chat message
+            case 99: // chat message
                 var flags = reader.getUint8();
                 var color = bytesToHex(reader.getUint8(), reader.getUint8(), reader.getUint8());
 
@@ -469,6 +469,7 @@
                 if (mod) name = "[MOD] " + name;
                 var wait = Math.max(3000, 1000 + message.length * 150);
                 chat.waitUntil = syncUpdStamp - chat.waitUntil > 1000 ? syncUpdStamp + wait : chat.waitUntil + wait;
+                    if (!message.includes("Join Our Discord")) {        			
                 chat.messages.push({
                     server: server,
                     admin: admin,
@@ -478,7 +479,9 @@
                     message: message,
                     time: syncUpdStamp
                 });
+					
                 if (settings.showChat) drawChat();
+				}
                 break;
             case 0xFE: // server stat
                 stats.info = JSON.parse(reader.getStringUTF8());
