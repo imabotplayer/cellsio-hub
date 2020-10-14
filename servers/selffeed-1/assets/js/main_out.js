@@ -1742,12 +1742,6 @@ var privateModOptions = [{
             text: 'Zimbabwe',
             value: 31
         }, {
-            text: 'Antarctic',
-            value: 35
-        }, {
-            text: 'Beta 1v1 Scrims',
-            value: 32
-        }, {
             text: 'Bots',
             value: 33
         }, {
@@ -1765,6 +1759,12 @@ var privateModOptions = [{
         }, {
             text: 'Ogar Eat-cells',
             value: 40
+        }, {
+            text: 'Antarctic',
+            value: 35
+        }, {
+            text: 'Beta 1v1 Scrims',
+            value: 32
         }, {			
             text: 'FPS Test',
             value: 12
