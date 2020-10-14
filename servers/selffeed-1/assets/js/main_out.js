@@ -1,4 +1,4 @@
-//v0.4
+//v0.5
 (function() {
     "use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -1708,8 +1708,9 @@
         log.info("init done in " + (Date.now() - LOAD_START) + "ms");
     }
     window.setserver = function(url) {
+		
         if (url == wsUrl && ws && ws.readyState <= WebSocket.OPEN) return;
-        document.getElementById("wsserver").value = url
+        if (document.getElementById("wsserver")) document.getElementById("wsserver").value = url
 		wsInit(url);
 		
     };
@@ -1800,4 +1801,26 @@ $('#gamemode').change(function() {
         }
 
 });	
+document.getElementById("wsserver").addEventListener('contextmenu', openContextMenu3, false);
+function leftClickOpen2() {
+    var temp11 = document.getElementById("wsserver").value
+    var temp12 = "https://glitch.com/~" + temp11.replace("wss://", "").replace(".glitch.me", "")
+    window.open(temp12, '_blank');
+}
+function openContextMenu3(evt) {
+    if (document.getElementById("wsserver").value.includes('.glitch.me')) {
+        evt.preventDefault();
+        const time = menuLeft3.isOpen() ? 100 : 0;
+        menuLeft3.hide();
+        setTimeout(() => {
+            menuLeft3.show(evt.pageX, evt.pageY)
+        }, time);
+        document.getElementById("wsserver").addEventListener('click', hideContextMenu3, false);
+    }
+}
+function hideContextMenu3(evt) {
+    menuLeft3.hide();
+    document.getElementById("wsserver").removeEventListener('click', hideContextMenu3);
+}
+
 //}, 1500)	
