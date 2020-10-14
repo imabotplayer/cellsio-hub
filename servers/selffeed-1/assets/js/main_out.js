@@ -1,6 +1,4 @@
-//v0.1
-(function() {
-    "use strict";
+//v0.2
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
         typeof ArrayBuffer === 'undefined' || typeof Uint8Array === 'undefined') {
         alert('Your browser does not support required features, please update your browser or get a new one.');
@@ -1709,6 +1707,7 @@
 		wsInit(url);
 		
     };
+setTimeout(function() {	
 	$("#connector").click(function() {
 		window.setserver($("#wsserver").val())
 	})	
@@ -1771,7 +1770,8 @@ $('#gamemode').change(function() {
             window.setserver('distrustfurryserver.herokuapp.com/');
         }
 
-});		
+});	
+}, 1500)	
     window.spectate = function(a) {
         wsSend(UINT8_CACHE[1]);
         stats.maxScore = 0;
@@ -1789,5 +1789,4 @@ $('#gamemode').change(function() {
 	
 	
     window.addEventListener("DOMContentLoaded", init);
-	
-})();
+
