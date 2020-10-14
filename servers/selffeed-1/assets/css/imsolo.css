@@ -32,9 +32,9 @@ body {
 
 .hud {
     position: absolute;
-    width: 450px;
+    width: 550px;
     margin-bottom: 1px;
-    height: 600px;
+    height: 750px;
     background: white;
     top: 30px;
     left: 50%;
