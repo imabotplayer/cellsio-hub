@@ -175,7 +175,9 @@ button:hover {
   .container input:checked ~ .checkmark:after {
     display: block;
   }
-  
+  #wsserver {
+	  width: 250px;
+  }
   /* Style the checkmark/indicator */
   .container .checkmark:after {
     left: 9px;
