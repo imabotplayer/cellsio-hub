@@ -1,3 +1,4 @@
+//start
 (function() {
     "use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -1677,7 +1678,7 @@
             }
             if (event.target.id == "splitBtn") {
                 wsSend(UINT8_CACHE[17]);
-            } else if (event.target.id == "ejectBtn") {
+            } else if (event.key == "W") {
                 wsSend(UINT8_CACHE[21]);
             } else {
                 touchmove(event);
@@ -1704,9 +1705,7 @@
     }
     window.setserver = function(url) {
         if (url == wsUrl && ws && ws.readyState <= WebSocket.OPEN) return;
-        document.getElementById("wsserver").value = url
-		wsInit(url);
-		
+        wsInit(url);
     };
     window.spectate = function(a) {
         wsSend(UINT8_CACHE[1]);
