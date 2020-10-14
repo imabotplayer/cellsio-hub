@@ -1677,7 +1677,7 @@
             }
             if (event.target.id == "splitBtn") {
                 wsSend(UINT8_CACHE[17]);
-            } else if (event.target.id == "ejectBtn") {
+            } else if (event.key == "W") {
                 wsSend(UINT8_CACHE[21]);
             } else {
                 touchmove(event);
