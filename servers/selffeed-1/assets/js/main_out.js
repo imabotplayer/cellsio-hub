@@ -1,4 +1,4 @@
-//v0.8
+//v0.9
 //(function() {
     //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -1740,7 +1740,7 @@
 
 //jimboy3100's
 
-//setTimeout(function() {
+setTimeout(function() {
 	$("#connector").click(function() {
 		window.setserver($("#wsserver").val())
 	})	
@@ -1826,4 +1826,4 @@ function hideContextMenu3(evt) {
     document.getElementById("wsserver").removeEventListener('click', hideContextMenu3);
 }
 
-//}, 1500)	
+}, 500)	
