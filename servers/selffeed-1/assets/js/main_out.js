@@ -1735,7 +1735,8 @@
 })();
 
 //jimboy3100's
-setTimeout(function() {
+
+//setTimeout(function() {
 	$("#connector").click(function() {
 		window.setserver($("#wsserver").val())
 	})	
@@ -1799,4 +1800,4 @@ $('#gamemode').change(function() {
         }
 
 });	
-}, 1500)	
+//}, 1500)	
