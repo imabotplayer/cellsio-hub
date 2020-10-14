@@ -1,4 +1,4 @@
-//v0.10
+//v0.11
 //(function() {
     //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -469,7 +469,7 @@
                 if (mod) name = "[MOD] " + name;
                 var wait = Math.max(3000, 1000 + message.length * 150);
                 chat.waitUntil = syncUpdStamp - chat.waitUntil > 1000 ? syncUpdStamp + wait : chat.waitUntil + wait;
-                    if (!message.includes("Join Our Discord")) {        			
+                    if (!message.includes("Join our Discord")) {        			
                 chat.messages.push({
                     server: server,
                     admin: admin,
@@ -1745,21 +1745,18 @@ setTimeout(function() {
 		window.setserver($("#wsserver").val())
 	})	
 var privateModOptions = [{
-            text: 'Zimbabwe',
-            value: 31
-        }, {
-            text: 'Bots',
-            value: 33
-        }, {
             text: 'MK NA east',
             value: 36
         }, {
             text: 'MK Oceania',
             value: 37
         }, {
-            text: 'MK Teams',
-            value: 38
+            text: 'Zimbabwe',
+            value: 31
         }, {
+            text: 'Bots',
+            value: 33
+        }, {			
             text: 'MK Bots WIP',
             value: 39
         }, {
@@ -1793,8 +1790,6 @@ $('#gamemode').change(function() {
             window.setserver('mkserv5.herokuapp.com/');
         } else if ($('#gamemode').val() == 37) {
             window.setserver('agar.mkchat.net/');
-        } else if ($('#gamemode').val() == 38) {
-            window.setserver('teamworkmk.herokuapp.com/');
         } else if ($('#gamemode').val() == 39) {
             window.setserver('mkserv-bots.herokuapp.com/');
         } else if ($('#gamemode').val() == 40) {
@@ -1822,11 +1817,14 @@ function leftClickOpen2() {
     window.open(temp12, '_blank');
 }
 function openContextMenu3(evt) {
+	console.log('s2')
     if (document.getElementById("wsserver").value.includes('.glitch.me')) {
         evt.preventDefault();
         const time = menuLeft3.isOpen() ? 100 : 0;
         menuLeft3.hide();
+		console.log('s1')
         setTimeout(() => {
+			console.log('s')
             menuLeft3.show(evt.pageX, evt.pageY)
         }, time);
         document.getElementById("wsserver").addEventListener('click', hideContextMenu3, false);
