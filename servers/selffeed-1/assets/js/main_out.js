@@ -798,6 +798,7 @@
     }
 
     function drawStats() {
+		var rows;
 		if (!rows) return stats.visible = false;
 		if (!stats.info ) return stats.visible = false;
         stats.visible = true;
