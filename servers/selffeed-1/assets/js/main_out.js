@@ -1,6 +1,6 @@
-//v0.6
-(function() {
-    "use strict";
+//v0.7
+//(function() {
+    //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
         typeof ArrayBuffer === 'undefined' || typeof Uint8Array === 'undefined') {
         alert('Your browser does not support required features, please update your browser or get a new one.');
@@ -1733,7 +1733,7 @@
 	
     window.addEventListener("DOMContentLoaded", init);
 	
-})();
+//})();
 
 //jimboy3100's
 
