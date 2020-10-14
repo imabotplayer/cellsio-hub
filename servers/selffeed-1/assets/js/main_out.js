@@ -1,4 +1,4 @@
-//v0.11
+//v0.12
 //(function() {
     //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -511,7 +511,7 @@
     }
     function sendChat(text) {
         var writer = new Writer();
-        writer.setUint8(0x63);
+        writer.setUint8(99);
         writer.setUint8(0);
         writer.setStringUTF8(text);
         wsSend(writer);
@@ -1631,8 +1631,10 @@
             }
             hideESCOverlay();
         });
-        window.onkeydown = keydown;
-        window.onkeyup = keyup;
+		chatBox.onkeydown = keydown;
+		chatBox.onkeyup = keyup;
+        //window.onkeydown = keydown;
+        //window.onkeyup = keyup;
         chatBox.onblur = function() {
             isTyping = false;
             drawChat();
