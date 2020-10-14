@@ -1,4 +1,4 @@
-//v0.5
+//v0.6
 (function() {
     "use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -277,7 +277,7 @@
             log.debug("ws init on existing conn");
             wsCleanup();
         }
-        byId("connecting").show(0.5);
+        if (byId("connecting")) byId("connecting").show(0.5);
         wsUrl = url;
         ws = new WebSocket("wss" + "://" + url);
         ws.binaryType = "arraybuffer";
