@@ -84,7 +84,6 @@ button {
     background-color: #3F51B5;
     color: #FFFFFF;
     display: inline-block;
-    padding: 0.2em 1.2em;
     cursor: pointer;
     box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.16), 0 0.3em 0.3em rgba(0, 0, 0, 0.16);
     transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -177,6 +176,9 @@ button:hover {
   }
   #wsserver {
 	  width: 250px;
+  }
+  #connector{
+	  width: 100px;
   }
   /* Style the checkmark/indicator */
   .container .checkmark:after {
