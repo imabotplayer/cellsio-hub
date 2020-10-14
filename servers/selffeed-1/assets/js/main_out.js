@@ -1,4 +1,4 @@
-//v0.9
+//v0.10
 //(function() {
     //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -1805,6 +1805,17 @@ $('#gamemode').change(function() {
 
 });	
 document.getElementById("wsserver").addEventListener('contextmenu', openContextMenu3, false);
+var menuLeft3 = new ContextMenu({
+    'theme': 'default', // or 'blue'
+    'items': [{
+        'icon': 'download',
+        'name': 'Open',
+        action: () => {
+            leftClickOpen2()
+            menuLeft3.hide();
+        }
+    }]
+});
 function leftClickOpen2() {
     var temp11 = document.getElementById("wsserver").value
     var temp12 = "https://glitch.com/~" + temp11.replace("wss://", "").replace(".glitch.me", "")
