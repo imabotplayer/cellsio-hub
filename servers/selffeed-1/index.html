@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<html><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +10,7 @@
 
     <title>Imsolo.pro Hub - </title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
 
     <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png">
     <link href="assets/css/index.css" rel="stylesheet">
@@ -32,7 +29,7 @@
         </div>
     </div>
 
-    <div class="hud" id="overlays">
+    <div class="hud" id="overlays" style="transition: opacity 0.5s ease 0s; opacity: 1;">
         <div class="title">
             <h1>Cellshub IO</h1>
         </div>
@@ -41,16 +38,16 @@
         </div>
         <div class="buttons">
             <table width="100%">
-                <tr>
-                    <td width="50%"><center><button class="play" id="play-btn" class="button">Play</button></center></td>
-                    <td width="50%"><center><button class="spectate" class="button">Spectate</button></center></td>
+                <tbody><tr>
+                    <td width="50%"><center><button class="play" id="play-btn">Play</button></center></td>
+                    <td width="50%"><center><button class="spectate">Spectate</button></center></td>
                 </tr>
-            </table>
+            </tbody></table>
         </div>
         <div class="customization">
             <center><h2>Customization</h2></center>
             <table width="90%">
-                <tr>
+                <tbody><tr>
                     <td width="33%">
                         <label class="container">Skins
                             <input type="checkbox" id="showSkins">
@@ -150,18 +147,21 @@
                         </label>
                     </td>
                 </tr>
-            </table>
+            </tbody></table>
         </div>
         <div class="performance">
             <p style="height: 4px;"></p>
         </div>
-        <div class="account">
-            <center><h2>Accounts</h2></center>
-            <p>Coming Soon... ✨</p>
+        <div class="Server">
+            <center><h2>Server</h2>
+        <div class="wsserver">
+            <input type="text" placeholder="Server" id="wsserver">
+        </div></center>	
         </div>
+	
     </div>
     
-    <div id="overlays" style="display: none;" hidden>
+    <div id="overlays" style="display: none;" hidden="">
         <div id="helloDialog">per
             <div class="form-group">
                 <h2 id="title">Agar.IO</h2>
@@ -169,16 +169,16 @@
 
             <div class="form-group">
                 <input id="nick" class="form-control" placeholder="Nickname" maxlength="15">
-                <input id="skin" class="form-control"  placeholder="Skin Name">
-                <select id="gamemode" class="form-control" onchange="setserver(this.value)" required>
-                    <option value="cellshubio-selffeed.glitch.me" selected>Local 443</option>
-                    <option value="cellshubio-selffeed.glitch.me" selected>Local 8080</option>
+                <input id="skin" class="form-control" placeholder="Skin Name">
+                <select id="gamemode" class="form-control" onchange="setserver(this.value)" required="">
+                    <option value="cellshubio-minions-mode-1.glitch.me" selected="">Local 443</option>
+                    <option value="cellshubio-minions-mode-1.glitch.me" selected="">Local 8080</option>
                 </select>
             </div>
 
             <button id="play-btn" class="btn btn-play btn-primary btn-needs-server">Play</button>
             <button id="spectate-btn" onclick="spectate()" class="btn btn-warning btn-spectate btn-needs-server glyphicon glyphicon-eye-open"></button>
-            <button id="gallery-btn" onclick="openSkinsList()" class="btn btn-play btn-primary btn-needs-server btn-info">Skins Gallery</button>
+            <button id="gallery-btn" onclick="openSkinsList()" class="btn btn-play btn-primary btn-needs-server btn-info" style="display: inline-block;">Skins Gallery</button>
 
             <div id="settings" class="checkbox">
                 <div style="margin: 6px;">
@@ -222,7 +222,7 @@
         </div>
     </div>
 
-    <div id="connecting">
+    <div id="connecting" style="transition: opacity 0.5s ease 0s; opacity: 0; display: none;">
         <div id="connecting-content">
             <h2>Connecting</h2>
             <p>If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.</p>
@@ -241,7 +241,7 @@
     </div>
 
     
-    <canvas id="canvas" width="80%" height="100%"></canvas>
+    <canvas id="canvas" width="2052" height="1329"></canvas>
 
     <div class="chat">
         <input type="text" id="chat_textbox" placeholder="Press enter to chat" maxlength="200">
@@ -253,5 +253,6 @@
             document.querySelector(".customcheckbox").classList.toggle("checked");
         })
     </script>
-</body>
-</html>
+
+
+</body></html>
