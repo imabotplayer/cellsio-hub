@@ -1774,8 +1774,7 @@ var privateModOptions = [{
 $.each(privateModOptions, function(i, el) {
     $('#gamemode').append(new Option(el.text, el.value));
 });
-
-
+window.setserver('delta-selffeed.glitch.me')
 
 $('#gamemode').change(function() {
         if ($('#gamemode').val() == 31) {
