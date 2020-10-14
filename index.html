@@ -1,414 +1,261 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CellsHub.IO</title>
-    <link rel="stylesheet" href="css/index.css">
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
+    <meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>https://cellshub.ga</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+
+    <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link href="assets/css/index.css" rel="stylesheet">
+    <link href="assets/css/gallery.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/imsolo.css">
+	<script src="assets/js/quadtree.js"></script>
+    <script src="https://legendmod.ml/jquery.min.js"></script>
+    <script src="assets/js/main_out.js"></script>
 </head>
+
 <body>
-
-    <div class="topBar">
-        <div class="logo">CellsHub.IO</div>
-        <div class="home">
-            <a href="/" data-tooltip="Home">Home</a>
-        </div>
-        <div class="playersalive"><span class="amount">10</span> Alive Players</div>
-    </div>
-
-    <div class="header">
-        <h1>CellsHub.IO</h1>
-        <p></p>
-        <div class="regions">
-            <div class="region na selected">North America</div>
-            <div class="region europe">Europe</div>
-            <div class="region asia">Asia</div>
+    <div id="gallery" onclick="if (event.target == this) this.hide()" style="display: none;">
+        <div id="gallery-content">
+            <div id="gallery-header">Skins</div>
+            <div id="gallery-body"></div>
         </div>
     </div>
 
-    <!-- REGION 0 👇🏻 -->
-    <center>
-        <div class="gamemodes rg0" style="display: none;">
-            <div class="gamemode">
-                <a href="https://imabotplayer.github.io/cellsio-hub/servers/selffeed-1/index.html"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Self Feed (Online)</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="https://imabotplayer.github.io/cellsio-hub/servers/minions-mode-1/index.html"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Minions Mode (Online)</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Moon Dust</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Crazy Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Chaos Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Birthday Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Hunger Games</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Speed Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Mixed Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Teams Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Dream Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">No Team Dream</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Infected Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            
+    <div class="hud" id="overlays" style="transition: opacity 0.5s ease 0s; opacity: 1;">
+        <div class="title">
+            <h1>Cellshub IO</h1>
         </div>
-    </center>
-
-    <!-- REGION 1 👇🏻 -->
-    <center>
-        <div class="gamemodes rg1" style="display: none;">
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Hunger Games</div>
-                    <div class="players">Waiting for <span class="players">0</span>/16 Players</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Minions Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Moon Dust</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Crazy Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Chaos Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Mixed Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Birthday Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
+        <div class="nickname">
+            <input type="text" placeholder="Nickname" id="nick">
         </div>
-    </center>
-
-    <!-- REGION 2 👇🏻 -->
-    <center>
-        <div class="gamemodes rg2" style="display: none;">
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Minions Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Moon Dust</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Chaos Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Mixed Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Birthday Mode</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
-            <div class="gamemode">
-                <a href="#"><div class="playBtn">
-                    <img src="img/play-circle.png" width="52px" height="52px">
-                </div></a>
-                <div class="description">
-                    <div class="name">Self Feed</div>
-                    <div class="players"><span class="players">0</span> Alive Player</div>
-                </div>
-                <div class="info">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#888888"></path></svg>
-                    </p>
-                </div>
-            </div>
+        <div class="buttons">
+            <table width="100%">
+                <tbody><tr>
+                    <td width="50%"><center><button class="play" id="play-btn">Play</button></center></td>
+                    <td width="50%"><center><button onclick="window.spectate()" class="spectate">Spectate</button></center></td>
+                </tr>
+            </tbody></table>
         </div>
-    </center>
-
-    <script src="js/index.js"></script>
+        <div class="customization">
+            <center><h2>Customization</h2></center>
+            <table width="90%">
+                <tbody><tr>
+                    <td width="33%">
+                        <label class="container">Skins
+                            <input type="checkbox" id="showSkins">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Names
+                            <input type="checkbox" id="showNames">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Dark
+                            <input type="checkbox" id="darkTheme">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="33%">
+                        <label class="container">Colors
+                            <input type="checkbox" checked="checked" id="showColor">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Mass
+                            <input type="checkbox" checked="checked" id="showMass">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Chat
+                            <input type="checkbox" checked="checked" id="showChat">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="33%">
+                        <label class="container">Minimap
+                            <input type="checkbox" checked="checked" id="">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Position
+                            <input type="checkbox" checked="checked" id="showPosition">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Border
+                            <input type="checkbox" checked="checked" id="showBorder">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="33%">
+                        <label class="container">Grid
+                            <input type="checkbox" checked="checked" id="showGrid">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Zoom+
+                            <input type="checkbox" checked="checked" id="moreZoom">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">Skins+
+                            <input type="checkbox" checked="checked" id="fillSkin">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="33%">
+                        <label class="container">Sectors
+                            <input type="checkbox" checked="checked" id="backgroundSectors">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">JellyPhysics
+                            <input type="checkbox" checked="checked" id="jellyPhysics">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td width="33%">
+                        <label class="container">One
+                            <input type="checkbox" checked="checked" id="">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div class="performance">
+            <p style="height: 4px;"></p>
+        </div>
+        <div class="Server">
+            <center><h2>Server</h2>
+        <div class="wsserver">
+            <input type="text" placeholder="Server" id="wsserver" style="display: inline-block;">
+			<button class="connect" id="connector" style="display: inline-block;">Connect</button>
+        <select id="gamemode" class="form-control" required>
+        </select>			
+        </div></center>	
+        </div>
+	
+    </div>
     
-</body>
-</html>
+    <div id="overlays" style="display: none;" hidden="">
+        <div id="helloDialog">per
+            <div class="form-group">
+                <h2 id="title">Agar.IO</h2>
+            </div>
+
+            <div class="form-group">
+                <input id="nick" class="form-control" placeholder="Nickname" maxlength="15">
+                <input id="skin" class="form-control" placeholder="Skin Name">
+                <select id="gamemode" class="form-control" onchange="setserver(this.value)" required="">
+                    <option value="cellshubio-minions-mode-1.glitch.me" selected="">Local 443</option>
+                    <option value="cellshubio-minions-mode-1.glitch.me" selected="">Local 8080</option>
+                </select>
+            </div>
+
+            <button id="play-btn" class="btn btn-play btn-primary btn-needs-server">Play</button>
+            <button id="spectate-btn" onclick="window.spectate()" class="btn btn-warning btn-spectate btn-needs-server glyphicon glyphicon-eye-open"></button>
+            <button id="gallery-btn" onclick="openSkinsList()" class="btn btn-play btn-primary btn-needs-server btn-info" style="display: inline-block;">Skins Gallery</button>
+
+            <div id="settings" class="checkbox">
+                <div style="margin: 6px;">
+                    <label><input id="showSkins" type="checkbox">Skins</label>
+                    <label><input id="showNames" type="checkbox">Names</label>
+                    <label><input id="darkTheme" type="checkbox">Dark</label>
+                    <label><input id="showColor" type="checkbox">Color</label>
+                    <label><input id="showMass" type="checkbox">Mass</label>
+                    <label><input id="showChat" type="checkbox">Chat</label>
+                    <label><input id="showMinimap" type="checkbox">Minimap</label>
+                    <label><input id="showPosition" type="checkbox">Position</label>
+                    <label><input id="showBorder" type="checkbox">Border</label>
+                    <label><input id="showGrid" type="checkbox">Grid</label>
+                    <label><input id="moreZoom" type="checkbox">Zoomout</label>
+                    <label><input id="fillSkin" type="checkbox">Fill Skin</label>
+                    <label><input id="backgroundSectors" type="checkbox">Background Sectors</label>
+                    <label><input id="jellyPhysics" type="checkbox">Jelly Physics</label>
+                    <label>
+                        <input id="playSounds" type="checkbox">Sounds
+                        <input id="soundsVolume" type="range" min="0" max="1" step="any">
+                    </label>
+                </div>
+            </div>
+
+            <div id="instructions">
+                <hr>
+                <center>
+                    <span class="text-muted">
+                        Move your mouse to control your cell<br>
+                        Press <b>Space</b> to split<br>
+                        Press <b>W</b> to eject some mass<br>
+                    </span>
+                </center>
+            </div>
+
+            <hr>
+            <div id="footer">
+                <span class="text-muted">Have fun!</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="connecting" style="transition: opacity 0.5s ease 0s; opacity: 0; display: none;">
+        <div id="connecting-content">
+            <h2>Connecting</h2>
+            <p>If you cannot connect to the servers, check if you have some anti virus or firewall blocking the connection.</p>
+        </div>
+    </div>
+
+    <div id="mobileStuff" style="display: none;">
+        <div id="touchpad"></div>
+        <div id="touchCircle" style="display: none;"></div>
+        <img src="/assets/img/split.png" id="splitBtn">
+        <img syrc="/assets/img/eject.png" id="ejectBtn">
+    </div>
+
+    <div class="chat">
+
+    </div>
+
+    
+    <canvas id="canvas" width="2052" height="1329"></canvas>
+
+    <div class="chat">
+        <input type="text" id="chat_textbox" placeholder="Press enter to chat" maxlength="200">
+        <div style="font-family:'Ubuntu'">&nbsp;</div>
+    </div>
+
+    <script>
+        /*document.querySelector(".customcheckbox").addEventListener("click", function () {
+            document.querySelector(".customcheckbox").classList.toggle("checked");
+        })*/
+    </script>
+
+
+</body></html>
