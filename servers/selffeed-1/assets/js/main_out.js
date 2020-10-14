@@ -1,4 +1,4 @@
-//v0.12
+//v0.13
 //(function() {
     //"use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -1577,17 +1577,22 @@
         return key;
     }
     function keydown(event) {
+		//console.log('1')
         var key = processKey(event);
-        if (pressed[key]) return;
+        //if (pressed[key]) return;
+		//console.log(key)
         if (pressed.hasOwnProperty(key)) pressed[key] = true;
         if (key == "enter") {
-            if (escOverlayShown || !settings.showChat) return;
-            if (isTyping) {
+            if (!settings.showChat) return;
+            //console.log('2')
+			//if (isTyping) {
+				//console.log('3')
                 chatBox.blur();
                 var text = chatBox.value;
                 if (text.length > 0) sendChat(text);
                 chatBox.value = "";
-            } else chatBox.focus();
+            //} 
+			//else chatBox.focus();
         } else if (key == "escape") {
             escOverlayShown ? hideESCOverlay() : showESCOverlay();
         } else {
@@ -1631,10 +1636,8 @@
             }
             hideESCOverlay();
         });
-		chatBox.onkeydown = keydown;
-		chatBox.onkeyup = keyup;
-        //window.onkeydown = keydown;
-        //window.onkeyup = keyup;
+        window.onkeydown = keydown;
+        window.onkeyup = keyup;
         chatBox.onblur = function() {
             isTyping = false;
             drawChat();
@@ -1779,7 +1782,7 @@ var privateModOptions = [{
 $.each(privateModOptions, function(i, el) {
     $('#gamemode').append(new Option(el.text, el.value));
 });
-window.setserver('delta-selffeed.glitch.me')
+window.setserver('mkserv5.herokuapp.com/')
 
 $('#gamemode').change(function() {
         if ($('#gamemode').val() == 31) {
