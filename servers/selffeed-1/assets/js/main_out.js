@@ -1,4 +1,3 @@
-//v0.3
 (function() {
     "use strict";
     if (typeof WebSocket === 'undefined' || typeof DataView === 'undefined' ||
@@ -1709,7 +1708,6 @@
 		wsInit(url);
 		
     };
-
     window.spectate = function(a) {
         wsSend(UINT8_CACHE[1]);
         stats.maxScore = 0;
@@ -1724,75 +1722,5 @@
         if (byId("gallery-body").innerHTML == "") buildGallery();
         byId("gallery").show(0.5);
     };
-	
-	
     window.addEventListener("DOMContentLoaded", init);
-	
 })();
-
-//jimboy3100's
-setTimeout(function() {
-	$("#connector").click(function() {
-		window.setserver($("#wsserver").val())
-	})	
-var privateModOptions = [{
-            text: 'Zimbabwe',
-            value: 31
-        }, {
-            text: 'Antarctic',
-            value: 35
-        }, {
-            text: 'Beta 1v1 Scrims',
-            value: 32
-        }, {
-            text: 'Bots',
-            value: 33
-        }, {
-            text: 'MK NA east',
-            value: 36
-        }, {
-            text: 'MK Oceania',
-            value: 37
-        }, {
-            text: 'MK Teams',
-            value: 38
-        }, {
-            text: 'MK Bots WIP',
-            value: 39
-        }, {
-            text: 'Ogar Eat-cells',
-            value: 40
-        }, {			
-            text: 'FPS Test',
-            value: 12
-        }
-    ];
-	
-$.each(privateModOptions, function(i, el) {
-    $('#gamemode').append(new Option(el.text, el.value));
-});
-
-
-$('#gamemode').change(function() {
-        if ($('#gamemode').val() == 31) {
-            window.setserver('delta-selffeed.glitch.me');
-        } else if ($('#gamemode').val() == 33) {
-            window.setserver('lm-bots-ps.glitch.me');
-        } else if ($('#gamemode').val() == 35) {
-            window.setserver('delta-server.glitch.me');
-        } else if ($('#gamemode').val() == 36) {
-            window.setserver('mkserv5.herokuapp.com/');
-        } else if ($('#gamemode').val() == 37) {
-            window.setserver('agar.mkchat.net/');
-        } else if ($('#gamemode').val() == 38) {
-            window.setserver('teamworkmk.herokuapp.com/');
-        } else if ($('#gamemode').val() == 39) {
-            window.setserver('mkserv-bots.herokuapp.com/');
-        } else if ($('#gamemode').val() == 40) {
-            window.setserver('ogar.eatcells.com/api/');			
-        } else if ($('#gamemode').val() == 41) {
-            window.setserver('distrustfurryserver.herokuapp.com/');
-        }
-
-});	
-}, 1500)	
