@@ -1819,7 +1819,7 @@ var menuLeft3 = new ContextMenu({
 });
 function leftClickOpen2() {
     var temp11 = document.getElementById("wsserver").value
-    var temp12 = "https://glitch.com/~" + temp11.replace("wss://", "").replace(".glitch.me", "")
+    var temp12 = "https://glitch.com/~" + temp11.replace("ws://", "").replace(".glitch.me", "")
     window.open(temp12, '_blank');
 }
 function openContextMenu3(evt) {
