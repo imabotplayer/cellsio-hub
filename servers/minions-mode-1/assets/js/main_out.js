@@ -277,7 +277,7 @@
         }
         byId("connecting").show(0.5);
         wsUrl = url;
-        ws = new WebSocket("wss" + "://" + url);
+        ws = new WebSocket("ws" + "://" + url);
         ws.binaryType = "arraybuffer";
         ws.onopen = wsOpen;
         ws.onmessage = wsMessage;
